@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
-import './App.css'; // 스타일 파일 불러오기
+import React, { useState } from "react";
+import "./App.css"; // 스타일 파일 불러오기
+import ChartPage from "./ChartPage";
 
 enum Page {
-  One = '페이지#01',
-  Two = '페이지#02',
-  Three = '페이지#03'
+  One = "페이지#01",
+  Two = "페이지#02",
+  Three = "페이지#03",
+  Four = "페이지#4",
 }
 
 const PageOne: React.FC = () => {
-  return ( 
+  return (
     <div>
       <h2>업무 하나를 위한 페이지입니다</h2>
     </div>
@@ -42,30 +44,50 @@ const Footer: React.FC = () => {
   );
 };
 
-
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<Page>(Page.Two);
+  const [currentPage, setCurrentPage] = useState<Page>(Page.Four);
   return (
     <div>
       <header className="header">
         <nav className="nav">
           <ul className="nav-list">
             <li className="nav-item">
-              <a href="#" onClick={() => setCurrentPage(Page.One)}>{Page.One}</a>
+              <a href="#" onClick={() => setCurrentPage(Page.One)}>
+                {Page.One}
+              </a>
             </li>
             <li className="nav-item">
-              <a href="#" onClick={() => setCurrentPage(Page.Two)}>{Page.Two}</a>
+              <a href="#" onClick={() => setCurrentPage(Page.Two)}>
+                {Page.Two}
+              </a>
             </li>
             <li className="nav-item">
-              <a href="#" onClick={() => setCurrentPage(Page.Three)}>{Page.Three}</a>
+              <a href="#" onClick={() => setCurrentPage(Page.Three)}>
+                {Page.Three}
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="#" onClick={() => setCurrentPage(Page.Four)}>
+                {Page.Four}
+              </a>
             </li>
           </ul>
         </nav>
       </header>
+
       <main>
-        {currentPage === Page.One ? <PageOne /> : currentPage === Page.Two ? <PageTwo /> : <PageThree />}
+        {currentPage === Page.One ? (
+          <PageOne />
+        ) : currentPage === Page.Two ? (
+          <PageTwo />
+        ) : currentPage === Page.Three ? (
+          <PageThree />
+        ) : (
+          <ChartPage />
+        )}
       </main>
-      <Footer/>
+
+      <Footer />
     </div>
   );
 };
