@@ -1,3 +1,6 @@
+# 구성중
+3개 페이지로 구성된 간단한 화면 전환 리액트 앱
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
