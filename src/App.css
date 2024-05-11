@@ -1,0 +1,49 @@
+.header {
+  background-color: #333;
+  padding: 10px;
+}
+
+.footer {
+  background-color: #857373;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  justify-content: center; /* 링크 메뉴를 가운데 정렬 */
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%; /* 링크 메뉴가 전체 너비를 차지하도록 설정 */
+}
+
+.nav-item {
+  flex: 1; /* 각 링크 메뉴를 균등하게 너비 설정 */
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-item a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  padding-bottom: 50px; /* Footer가 화면 위로 겹치지 않도록 콘텐츠 아래 여백 추가 */
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px); /* Footer와 Header 높이 고려하여 콘텐츠 영역 높이 조절 */
+}
